@@ -1,0 +1,24 @@
+<div class="container">
+    <p class="display-3 mt-5 text-center mb-5">Tabla Usuarios</p>
+    <table  class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre de usuario</th>
+            <th scope="col">Fecha de nacimiento</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Dirección</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of usuarios; index as i">
+            <td>{{ i + 1 }} </td>
+            <th scope="row">{{user?.name || '-'}}</th>
+            <td>{{user?.fecha_nacimiento || '-'}}</td>
+            <td>{{user?.age || '-'}}</td>
+            <td>{{user?.domicilio + ' ' + user?.numero_exterior + ' ' + user?.colonia + ' ' + user?.cp + ' ' + user?.ciudad }}</td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+
